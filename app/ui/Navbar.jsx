@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-      <header className="max-w-[90%] mx-auto px-5 py-2 flex justify-between items-center">
+      <header className="max-w-[90%] mx-auto md:px-5 py-2 flex justify-between items-center">
         <p className="text-4xl md:text-6xl font-semibold text-indigo-900">
           Quiz<span className="text-teal-700">Line</span>
         </p>
