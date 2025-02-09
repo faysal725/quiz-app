@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
+import Timer from "./Timer";
 
 export default function QuizBox({ quizData }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -68,7 +69,7 @@ export default function QuizBox({ quizData }) {
   }
 
   const calculateScore = () => {
-    console.log(selectedAnswers)
+    
 
     let total = 0
     selectedAnswers.map((ans) => ans.is_correct && total++ )
@@ -79,6 +80,19 @@ export default function QuizBox({ quizData }) {
     return quizData.questions[currentQuestion].options.map(
       (ques) => ques.is_correct && ques.description
     );
+  };
+
+  const restart = () => {
+
+
+    setCurrentQuestion(0)
+    setSelectedAnswers([])
+    setSelectedAnswers({
+      id: null,
+      is_correct: null,
+      correct_ans: null,
+    })
+    setShowResults(false)
   };
 
   useEffect(() => {
@@ -96,9 +110,15 @@ export default function QuizBox({ quizData }) {
   if (showResults) {
     const totalScore = calculateScore();
     return (
-      <div className="text-white py-10">
+      <div className="text-white py-10 flex flex-col justify-center items-center">
         <h2 className="text-xl">Quiz Results</h2>
         <p className="text-sm">Total Points: {totalScore}</p>
+        <button
+          onClick={restart}
+          className="bg-blue-500 p-1 px-4 mt-5 rounded-full hover:bg-blue-400 text-xs"
+        >
+          Start Over
+        </button>
       </div>
     );
   }
@@ -107,10 +127,11 @@ export default function QuizBox({ quizData }) {
 
   return (
     <section className="w-[500px] max-w-full ">
-      <p className="text-center pb-2 text-white">15:00</p>
+      <Timer minutes={quizData.duration} onTimerEnd={() => setShowResults(true)} />
+
       <div className="bg-white p-4 px-6 rounded-xl">
         <h2 className="font-semibold">{currentQuizQuestion.description}</h2>
-        <section className="space-y-4 pt-4 min-h-[400px] flex flex-col justify-start ">
+        <section className="space-y-4 pt-4 min-h-[330px] md:min-h-[400px] flex flex-col justify-start ">
           {currentQuizQuestion.options.map((option, index) => (
             <div
               key={index}
@@ -136,7 +157,7 @@ export default function QuizBox({ quizData }) {
           {selectedOption.correct_ans ? (
             <div
               style={{ marginTop: "auto" }}
-              className="bg-green-100 h-16 flex justify-center items-center"
+              className="bg-green-100 h-16 flex justify-center items-center "
             >
               <p className="text-green-600 text-sm">
                 {selectedOption.correct_ans}

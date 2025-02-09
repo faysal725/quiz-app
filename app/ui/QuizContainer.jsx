@@ -12,7 +12,6 @@ export default function QuizContainer({ quizData }) {
   if (!shouldQuizStart) {
     return (
       <div className="  max-w-[90%] mx-auto py-10 flex justify-center">
-
         <section className="min-w-full md:min-w-[500px]">
           <div className="px-4 flex items-center gap-2">
             {/* ping  */}
@@ -36,7 +35,10 @@ export default function QuizContainer({ quizData }) {
             <p className="text-sm md:text-base">Topic: {quizData.topic}</p>
           </div>
           <div className="flex justify-center bg-white py-3">
-            <button onClick={() => setShouldQuizStart(true)} className="bg-teal-700 text-white w-48 py-1 rounded-full transition-all duration-150 hover:bg-teal-600 ">
+            <button
+              onClick={() => setShouldQuizStart(true)}
+              className="bg-teal-700 text-white w-48 py-1 rounded-full transition-all duration-150 hover:bg-teal-600 "
+            >
               Start Test
             </button>
           </div>
@@ -46,7 +48,7 @@ export default function QuizContainer({ quizData }) {
   }
 
   return (
-    <main className="bg-blue-600 flex justify-center py-10 mt-10">
+    <main className="bg-blue-600 flex justify-center py-10 md:mt-10 fixed top-0 right-0 h-full w-full md:relative px-2">
       <QuizBox quizData={quizData} />
     </main>
   );
