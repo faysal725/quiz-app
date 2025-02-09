@@ -25,7 +25,7 @@ npm (v9 or higher)
 
 ### Clone the Repository:
 
-git clone https://github.com/faysal725/quiz-app.git
+git clone [https://github.com/faysal725/quiz-app.git](https://github.com/faysal725/quiz-app.git)
 
 cd quiz-app
 
