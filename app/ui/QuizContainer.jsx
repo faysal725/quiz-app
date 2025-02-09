@@ -46,7 +46,7 @@ export default function QuizContainer({ quizData }) {
   }
 
   return (
-    <main className="bg-blue-600 flex justify-center py-10">
+    <main className="bg-blue-600 flex justify-center py-10 mt-10">
       <QuizBox quizData={quizData} />
     </main>
   );

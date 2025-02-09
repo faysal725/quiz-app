@@ -68,12 +68,11 @@ export default function QuizBox({ quizData }) {
   }
 
   const calculateScore = () => {
-    return selectedAnswers.reduce((score, answer, index) => {
-      if (answer === quizData.questions[index].correctAnswer) {
-        return score + 1;
-      }
-      return score;
-    }, 0);
+    console.log(selectedAnswers)
+
+    let total = 0
+    selectedAnswers.map((ans) => ans.is_correct && total++ )
+    return total
   };
 
   const insertCorrectAns = () => {
@@ -97,7 +96,7 @@ export default function QuizBox({ quizData }) {
   if (showResults) {
     const totalScore = calculateScore();
     return (
-      <div className="text-white">
+      <div className="text-white py-10">
         <h2 className="text-xl">Quiz Results</h2>
         <p className="text-sm">Total Points: {totalScore}</p>
       </div>
