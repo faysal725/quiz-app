@@ -20,7 +20,6 @@ Frontend: Next.js, React, Tailwind CSS, axios, clsx
 
 API: Fetch quiz data from https://api.jsonserve.com/Uw5CrX
 
-Deployment: Vercel
 
 ## Setup Instructions
 ### Prerequisites
