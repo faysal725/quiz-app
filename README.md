@@ -11,8 +11,6 @@ Timer to track quiz duration.
 
 Instant feedback on correct/incorrect answers.
 
-Progress bar to show how many questions are left.
-
 Responsive Design: The app is fully responsive and works seamlessly on both desktop and mobile devices.
 
 Error Handling: Proper error handling for API requests and user inputs.
