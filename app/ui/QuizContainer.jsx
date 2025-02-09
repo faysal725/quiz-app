@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import { BeakerIcon, ClockIcon } from "@heroicons/react/24/outline";
+import QuizBox from "./QuizBox";
 
 export default function QuizContainer({ quizData }) {
   const [shouldQuizStart, setShouldQuizStart] = useState(false);
 
-  console.log(quizData);
+  // console.log(quizData);
 
   if (!shouldQuizStart) {
     return (
@@ -46,7 +47,7 @@ export default function QuizContainer({ quizData }) {
 
   return (
     <main className="bg-blue-600 flex justify-center py-10">
-      <section className=" bg-white">asdf</section>
+      <QuizBox quizData={quizData} />
     </main>
   );
 }
