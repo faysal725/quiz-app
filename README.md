@@ -26,18 +26,23 @@ npm (v9 or higher)
 ### Clone the Repository:
 
 git clone https://github.com/faysal725/quiz-app.git
+
 cd quiz-app
 
 ### Install Dependencies:
 
 npm install
+
 or
+
 yarn
 
 ### Run the Development Server:
 
 npm run dev
+
 or
+
 yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
