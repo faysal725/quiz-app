@@ -1,6 +1,6 @@
 ## Quiz App with Gamification
 ### Project Overview
-This is a web-based quiz application built using Next.js that fetches quiz data from an external API and presents it through an engaging user interface. The app includes gamification features such as a timer, progress tracking, and instant feedback on answers. The goal is to make learning interactive and fun for users.
+This is a web-based quiz application built using Next.js that fetches quiz data from an external API and presents it through an engaging user interface. The app includes gamification features such as a timer and instant feedback on answers. The goal is to make learning interactive and fun for users.
 
 ### Key Features
 Quiz Flow: Users can start a quiz, answer multiple-choice questions, and see their results at the end.
