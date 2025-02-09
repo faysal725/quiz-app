@@ -1,11 +1,9 @@
-
 import QuizContainer from "./ui/QuizContainer";
 import { fetchQuizData } from "@/utils/fetchQuizData";
 
 export default async function Home() {
   // Fetch data directly in the component
   const quizData = await fetchQuizData();
-
 
   return (
     <main className="min-h-[84vh]">
@@ -36,8 +34,7 @@ export default async function Home() {
         </>
       ) : (
         <>
-            <QuizContainer quizData={quizData} />
-          
+          <QuizContainer quizData={quizData} />
         </>
       )}
     </main>

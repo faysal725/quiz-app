@@ -3,15 +3,15 @@
 import { useEffect, useState } from "react";
 
 export default function Timer({ minutes, onTimerEnd }) {
-  const [timeLeft, setTimeLeft] = useState(minutes * 60); // Convert minutes to seconds
+  const [timeLeft, setTimeLeft] = useState(minutes * 60); 
 
   useEffect(() => {
     if (timeLeft === 0) {
-      onTimerEnd(); // Fire the callback function when the timer reaches zero
+      onTimerEnd(); 
       return;
     }
 
-    // Set up the interval to decrement the timer every second
+    
     const intervalId = setInterval(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
@@ -20,7 +20,7 @@ export default function Timer({ minutes, onTimerEnd }) {
     return () => clearInterval(intervalId);
   }, [timeLeft, onTimerEnd]);
 
-  // Format the time left into MM:SS
+  // Format the time 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;

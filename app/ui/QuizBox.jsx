@@ -69,11 +69,9 @@ export default function QuizBox({ quizData }) {
   }
 
   const calculateScore = () => {
-    
-
-    let total = 0
-    selectedAnswers.map((ans) => ans.is_correct && total++ )
-    return total
+    let total = 0;
+    selectedAnswers.map((ans) => ans.is_correct && total++);
+    return total;
   };
 
   const insertCorrectAns = () => {
@@ -83,16 +81,14 @@ export default function QuizBox({ quizData }) {
   };
 
   const restart = () => {
-
-
-    setCurrentQuestion(0)
-    setSelectedAnswers([])
+    setCurrentQuestion(0);
+    setSelectedAnswers([]);
     setSelectedAnswers({
       id: null,
       is_correct: null,
       correct_ans: null,
-    })
-    setShowResults(false)
+    });
+    setShowResults(false);
   };
 
   useEffect(() => {
@@ -127,7 +123,10 @@ export default function QuizBox({ quizData }) {
 
   return (
     <section className="w-[500px] max-w-full ">
-      <Timer minutes={quizData.duration} onTimerEnd={() => setShowResults(true)} />
+      <Timer
+        minutes={quizData.duration}
+        onTimerEnd={() => setShowResults(true)}
+      />
 
       <div className="bg-white p-4 px-6 rounded-xl">
         <h2 className="font-semibold">{currentQuizQuestion.description}</h2>
