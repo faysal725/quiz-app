@@ -15,6 +15,13 @@ Responsive Design: The app is fully responsive and works seamlessly on both desk
 
 Error Handling: Proper error handling for API requests and user inputs.
 
+## Technologies Used
+Frontend: Next.js, React, Tailwind CSS, axios, clsx
+
+API: Fetch quiz data from https://api.jsonserve.com/Uw5CrX
+
+Deployment: Vercel
+
 ## Setup Instructions
 ### Prerequisites
 Node.js (v18 or higher)
